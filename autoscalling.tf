@@ -10,7 +10,7 @@ resource "aws_launch_template" "EC2_Launch_Template" {
 
 resource "aws_autoscaling_group" "EC2_AutoScaling_Group" {
 #  availability_zones = ["us-east-1a"]
-  availability_zones = [data.aws_availability_zones.all.names]
+  availability_zones = ["data.aws_availability_zones.all.names"]
   desired_capacity   = 1
   max_size           = 5
   min_size           = 1
