@@ -45,19 +45,19 @@ resource "aws_cloudwatch_log_group" "ElasticBeanStalk_log_group" {
 
 
 #######Create an AWS CloudWatch log subscription filter
-
-resource "aws_cloudwatch_log_subscription_filter" "route53_logfilter" {
-  name            = "route53_logfilter"
-  role_arn        = aws_iam_role.kinesis_subscription_filter_role.arn
-  log_group_name  = "route53_logs"
-  filter_pattern  = "testpattern"
-  destination_arn = aws_kinesis_stream.route53_kinesis_stream.arn
-  distribution    = "Random"
-  depends_on = [
-    aws_kinesis_stream.route53_kinesis_stream,
-    aws_iam_role.kinesis_subscription_filter_role
-  ]
-}
+#
+#resource "aws_cloudwatch_log_subscription_filter" "route53_logfilter" {
+#  name            = "route53_logfilter"
+#  role_arn        = aws_iam_role.kinesis_subscription_filter_role.arn
+#  log_group_name  = "route53_logs"
+#  filter_pattern  = "testpattern"
+#  destination_arn = aws_kinesis_stream.route53_kinesis_stream.arn
+#  distribution    = "Random"
+#  depends_on = [
+#    aws_kinesis_stream.route53_kinesis_stream,
+#    aws_iam_role.kinesis_subscription_filter_role
+#  ]
+#}
 
 
 resource "aws_kinesis_stream" "route53_kinesis_stream" {
