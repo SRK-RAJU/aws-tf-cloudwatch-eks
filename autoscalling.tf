@@ -1,8 +1,8 @@
 ###Create an AWS CloudWatch alarm metric with an AutoScaling Policy
 resource "aws_launch_template" "EC2_Launch_Template" {
   name_prefix   = "EC2-Launch-Template"
-  image_id      = "ami-0f540030bb04d884a"
-  instance_type = "t2.micro"
+  image_id      = "ami-05fa00d4c63e32376"
+  instance_type = "t2.medium"
 }
 
 resource "aws_autoscaling_group" "EC2_AutoScaling_Group" {
