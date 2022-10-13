@@ -59,6 +59,7 @@ EOF
 resource "aws_s3_bucket" "bucket" {
   bucket = "test-metric-stream-raju"
   acl    = "private"
+  force_destroy = true
 }
 
 resource "aws_iam_role" "firehose_to_s3" {
