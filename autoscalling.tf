@@ -18,7 +18,8 @@ resource "aws_autoscaling_group" "EC2_AutoScaling_Group" {
 
   launch_template {
     id      = aws_launch_template.EC2_Launch_Template.id
-    version = "$Latest"
+    version = aws_launch_template.EC2_Launch_Template.latest_version
+#    version = "$Latest"
   }
   depends_on = [
     aws_launch_template.EC2_Launch_Template,
