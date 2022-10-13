@@ -59,7 +59,7 @@ EOF
 resource "aws_s3_bucket" "bucket" {
   bucket = "test-metric-stream-raju"
   acl    = "private"
-  region ="ap-south-1"
+#  region ="ap-south-1"
   force_destroy = true
 }
 
